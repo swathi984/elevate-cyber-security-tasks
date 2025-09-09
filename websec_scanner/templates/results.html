@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Results</title>
+</head>
+<body>
+  <h2>Scan Results for {{ url }}</h2>
+  {% if results %}
+    <ul>
+      {% for vuln in results %}
+        <li>
+          <b>{{ vuln.type }}</b> - Severity: {{ vuln.severity }}<br>
+          URL: {{ vuln.url }}<br>
+          Evidence: {{ vuln.evidence }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No vulnerabilities found!</p>
+  {% endif %}
+  <a href="/">Go Back</a>
+</body>
+</html>
